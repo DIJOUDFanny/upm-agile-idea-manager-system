@@ -14,10 +14,10 @@ class Idea extends React.Component {
   render() {
     return (
       <tr>
-        <td>#{this.props.idea.id}</td>
+        <th scope="row">{this.props.idea.id}</th>
         <td>{this.props.idea.name}</td>
         <td>{this.props.idea.description}</td>
-        <td><button onClick={this.handleDelete}>Delete</button></td>
+        <td><button type="button" class="btn btn-danger" onClick={this.handleDelete}>Delete</button></td>
       </tr>
     )
   }

@@ -7,18 +7,22 @@ class IdeaList extends React.Component {
       <Idea key={idea.id} idea={idea} onDelete={this.props.onDelete}/>
     );
     return (
-      <table>
-        <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Description</th>
-        </tr>
-        </thead>
-        <tbody>
-        {ideas}
-        </tbody>
-      </table>
+      <div class="mt-4">
+        <h2 class="text-center">List of existing ideas</h2>
+
+        <table className="table">
+          <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          {ideas}
+          </tbody>
+        </table>
+      </div>
     )
   }
 }

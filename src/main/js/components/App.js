@@ -36,7 +36,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="container-fluid">
+        <h1 class="text-center mt-5 mb-4">Entrepreneurs Idea Manager</h1>
+
         <CreateIdeaForm onCreate={this.onCreate}/>
         <IdeaList ideas={this.state.ideas} onDelete={this.onDelete}/>
       </div>
