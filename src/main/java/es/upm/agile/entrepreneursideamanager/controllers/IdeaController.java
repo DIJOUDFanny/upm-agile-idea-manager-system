@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@V1APIController
 public class IdeaController {
 
   private final IdeaRepository repository;
