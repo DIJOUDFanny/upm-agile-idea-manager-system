@@ -4,7 +4,7 @@ const Idea = require('./Idea');
 class IdeaList extends React.Component {
   render() {
     const ideas = this.props.ideas.map(idea =>
-      <Idea key={idea.id} idea={idea}/>
+      <Idea key={idea.id} idea={idea} onDelete={this.props.onDelete}/>
     );
     return (
       <table>
