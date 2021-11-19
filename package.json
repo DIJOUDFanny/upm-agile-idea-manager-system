@@ -1,0 +1,36 @@
+{
+  "name": "entrepreneurs-idea-manager",
+  "version": "0.1.0",
+  "description": "The UPM Agile project about an entrepreneurs idea manager system.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Voltariuss/UPM-Agile-Project.git"
+  },
+  "keywords": [
+    "idea manager",
+    "entrepreneurs",
+    "upm",
+    "agile"
+  ],
+  "author": "Agile Groupe 3",
+  "bugs": {
+    "url": "https://github.com/Voltariuss/UPM-Agile-Project/issues"
+  },
+  "homepage": "https://github.com/Voltariuss/UPM-Agile-Project",
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "axios": "^0.24.0"
+  },
+  "scripts": {
+    "watch": "webpack --watch -d --output ./target/classes/static/built/bundle.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0"
+  }
+}

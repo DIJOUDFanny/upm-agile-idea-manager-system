@@ -1,4 +1,4 @@
-package es.upm.agile.entrepreneursideamanager.controllers;
+package es.upm.agile.entrepreneursideamanager.controllers.rest;
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.web.bind.annotation.RequestMapping;

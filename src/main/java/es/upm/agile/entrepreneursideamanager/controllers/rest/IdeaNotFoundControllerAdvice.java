@@ -1,4 +1,4 @@
-package es.upm.agile.entrepreneursideamanager.controllers;
+package es.upm.agile.entrepreneursideamanager.controllers.rest;
 
 import es.upm.agile.entrepreneursideamanager.IdeaNotFoundException;
 import org.springframework.http.HttpStatus;
