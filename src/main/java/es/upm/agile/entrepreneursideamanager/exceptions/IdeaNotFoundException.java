@@ -1,4 +1,4 @@
-package es.upm.agile.entrepreneursideamanager;
+package es.upm.agile.entrepreneursideamanager.exceptions;
 
 public class IdeaNotFoundException extends RuntimeException {
 

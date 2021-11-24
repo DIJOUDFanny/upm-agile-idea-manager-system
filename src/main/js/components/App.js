@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 
   loadIdeas() {
-    axios.get('/api/v1/ideas').then(response => {
+    axios.get('/ideas').then(response => {
       this.setState({ideas: response.data});
     });
   }
@@ -23,13 +23,13 @@ class App extends React.Component {
   }
 
   onCreate(newIdea) {
-    axios.post("api/v1/ideas", newIdea).then(() => {
+    axios.post("/ideas", newIdea).then(() => {
       this.loadIdeas();
     });
   }
 
   onDelete(idea) {
-    axios.delete('api/v1/ideas/' + idea.id).then(() => {
+    axios.delete('/ideas/' + idea.id).then(() => {
       this.loadIdeas();
     });
   }

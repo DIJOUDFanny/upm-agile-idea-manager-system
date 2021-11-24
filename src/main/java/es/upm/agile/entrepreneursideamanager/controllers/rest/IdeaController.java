@@ -1,55 +1,48 @@
 package es.upm.agile.entrepreneursideamanager.controllers.rest;
 
-import es.upm.agile.entrepreneursideamanager.IdeaNotFoundException;
-import es.upm.agile.entrepreneursideamanager.model.Idea;
-import es.upm.agile.entrepreneursideamanager.model.IdeaRepository;
+import es.upm.agile.entrepreneursideamanager.domain.Idea;
+import es.upm.agile.entrepreneursideamanager.exceptions.IdeaNotFoundException;
+import es.upm.agile.entrepreneursideamanager.services.IdeaService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@V1APIController
+@RestController
+@RequestMapping("/ideas")
 public class IdeaController {
 
-  private final IdeaRepository repository;
-
-  IdeaController(IdeaRepository repository) {
-    this.repository = repository;
-  }
-
-  @GetMapping("/ideas")
+  @Autowired
+  private IdeaService ideaService;
+  
+  @GetMapping("")
   public List<Idea> all() {
-    return repository.findAll();
+    return ideaService.findAll();
   }
 
-  @GetMapping("/ideas/{id}")
-  public Idea one(@PathVariable Long id) {
-    return repository.findById(id).orElseThrow(() -> new IdeaNotFoundException(id));
+  @GetMapping("/{id}")
+  public Idea getIdea(@PathVariable Long id) {
+	  Idea idea = ideaService.findById(id);
+	  if(idea == null) {
+		  throw new IdeaNotFoundException(id);
+	  }
+    return idea;
   }
 
-  @PostMapping("/ideas")
+  @PostMapping("")
   public Idea create(@RequestBody Idea newIdea) {
-    return repository.save(newIdea);
+    return ideaService.save(newIdea);
   }
 
-  @PutMapping("/ideas/{id}")
+  @PutMapping("/{id}")
   public Idea replace(@RequestBody Idea newIdea, @PathVariable Long id) {
-    return repository
-        .findById(id)
-        .map(
-            idea -> {
-              idea.setName(newIdea.getName());
-              idea.setDescription(newIdea.getDescription());
-              return repository.save(idea);
-            })
-        .orElseGet(
-            () -> {
-              newIdea.setId(id);
-              return repository.save(newIdea);
-            });
+	newIdea.setId(id);
+	return ideaService.save(newIdea);
   }
 
-  @DeleteMapping("/ideas/{id}")
+  @DeleteMapping("/{id}")
   public void delete(@PathVariable Long id) {
-    repository.deleteById(id);
+	  ideaService.deleteById(id);
   }
 }

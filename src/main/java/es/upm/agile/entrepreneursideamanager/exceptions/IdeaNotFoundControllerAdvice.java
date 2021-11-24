@@ -1,6 +1,5 @@
-package es.upm.agile.entrepreneursideamanager.controllers.rest;
+package es.upm.agile.entrepreneursideamanager.exceptions;
 
-import es.upm.agile.entrepreneursideamanager.IdeaNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

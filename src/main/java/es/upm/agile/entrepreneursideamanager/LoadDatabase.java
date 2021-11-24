@@ -1,10 +1,13 @@
-package es.upm.agile.entrepreneursideamanager.model;
+package es.upm.agile.entrepreneursideamanager;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import es.upm.agile.entrepreneursideamanager.domain.Idea;
+import es.upm.agile.entrepreneursideamanager.repositories.IdeaRepository;
 
 @Configuration
 public class LoadDatabase {
