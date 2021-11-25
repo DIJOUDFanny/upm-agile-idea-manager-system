@@ -1,10 +1,15 @@
-package es.upm.agile.entrepreneursideamanager.model;
+package es.upm.agile.entrepreneursideamanager.domain;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Idea {
@@ -12,10 +17,14 @@ public class Idea {
   @Id @GeneratedValue private Long id;
   private String name;
   private String description;
-
+  
+  @JsonIgnore
+  @OneToMany(mappedBy="idea")
+  private List<Comment> comments;
+  
   protected Idea() {}
 
-  Idea(String name, String description) {
+  public Idea(String name, String description) {
     this.name = name;
     this.description = description;
   }
