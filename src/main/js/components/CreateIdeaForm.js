@@ -39,14 +39,12 @@ class CreateIdeaForm extends React.Component {
       <div>
         <div id="createIdea" className="modalDialog">
           <div>
-            <h2 class="text-center">Create a new idea</h2>
-
             <div className={"container-fluid"}>
               <form className={"row justify-content-center"}>
                 <div className={"container-fluid"}>
                   {inputs}
                   <div className={"row justify-content-center"}>
-                    <button className="btn btn-primary col-auto" onClick={this.handleSubmit}>Create</button>
+                    <button className="btn btn-primary col-auto" onClick={this.handleSubmit}>Save draft</button>
                   </div>
                 </div>
               </form>
