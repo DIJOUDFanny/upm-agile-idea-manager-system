@@ -13,14 +13,16 @@ class Idea extends React.Component {
 
   render() {
     return (
-      <tr>
-        <th scope="row">{this.props.idea.id}</th>
-        <td>{this.props.idea.name}</td>
-        <td>{this.props.idea.description}</td>
-        <i class="bi bi-hand-thumbs-up-fill">13</i>
-        <i class="bi bi-hand-thumbs-down-fill">2</i>
-        6
-        </tr>
+      <tr align="center">
+        <button class="card" onclick="">
+        {this.props.idea.name}
+        <p>{this.props.idea.description}</p>
+        <p><i class="bi bi-hand-thumbs-up-fill">13</i>
+        <i class="bi bi-hand-thumbs-down-fill">2</i></p>
+        6com
+        </button>
+
+      </tr>
     )
   }
 }

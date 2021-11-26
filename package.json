@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/Voltariuss/UPM-Agile-Project",
   "dependencies": {
+    "axios": "^0.24.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "axios": "^0.24.0"
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0"
   },
   "scripts": {
     "watch": "webpack --watch -d --output ./target/classes/static/built/bundle.js"

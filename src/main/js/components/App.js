@@ -36,13 +36,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div class="container-fluid">
-        <h1 class="text-center mt-5 mb-4">Entrepreneurs Idea Manager</h1>
+      <div class="container-fluid text-center">
+        <h1 class="text-center mt-5 mb-4">IDEA HUB</h1>
 
-        <CreateIdeaForm onCreate={this.onCreate}/>
         <IdeaList ideas={this.state.ideas} onDelete={this.onDelete}/>
+        <button type="button" onclick="">Add a new idea</button>
       </div>
     );
+    /*<CreateIdeaForm onCreate={this.onCreate}/>*/
   }
 }
 
